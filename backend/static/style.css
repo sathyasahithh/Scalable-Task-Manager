@@ -1,0 +1,156 @@
+/* Custom CSS for Premium Glassmorphic Theme */
+
+/* Smooth backdrop transitions */
+body {
+    background: radial-gradient(circle at top left, #0D1326 0%, #060913 70%, #03050B 100%);
+    scroll-behavior: smooth;
+}
+
+/* Background Glowing Orbs */
+.glow-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.18;
+    z-index: 1;
+    pointer-events: none;
+    animation: float-slow 18s infinite alternate ease-in-out;
+}
+
+.orb-1 {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, #8B5CF6 0%, rgba(139, 92, 246, 0) 70%);
+    top: -100px;
+    left: -100px;
+}
+
+.orb-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #EC4899 0%, rgba(236, 72, 153, 0) 70%);
+    bottom: -150px;
+    right: -100px;
+    animation-delay: -5s;
+    animation-duration: 22s;
+}
+
+.orb-3 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, #3B82F6 0%, rgba(59, 130, 246, 0) 70%);
+    top: 40%;
+    left: 30%;
+    animation-delay: -8s;
+    animation-duration: 25s;
+}
+
+@keyframes float-slow {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(50px, 30px) scale(1.1);
+    }
+    100% {
+        transform: translate(-30px, -40px) scale(0.95);
+    }
+}
+
+/* Glassmorphism Styles */
+.glass-card {
+    background: rgba(13, 19, 36, 0.55);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card:hover {
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Styled Scrollbars */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(11, 15, 25, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(139, 92, 246, 0.15);
+    border-radius: 6px;
+    border: 2px solid transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 92, 246, 0.35);
+}
+
+/* Filter Button Active styling */
+.filter-btn {
+    background: rgba(255, 255, 255, 0.03);
+    color: #94A3B8;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.filter-btn:hover {
+    color: #F8FAFC;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%);
+    color: #A78BFA;
+    border-color: rgba(139, 92, 246, 0.4);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.1);
+}
+
+/* Micro-animations */
+.task-card-anim {
+    transition: all 0.30s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.task-card-anim:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+    border-color: rgba(139, 92, 246, 0.25);
+}
+
+/* Dropdown styling overrides */
+select {
+    background-image: none !important;
+}
+
+/* Toast animations */
+.toast-in {
+    animation: toast-slide-in 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.toast-out {
+    animation: toast-fade-out 0.25s ease forwards;
+}
+
+@keyframes toast-slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes toast-fade-out {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.9) translateY(-10px);
+    }
+}
