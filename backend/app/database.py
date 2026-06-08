@@ -1,6 +1,6 @@
 import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
-from urllib.parse import urlparse
+from urllib.parse import urlparse, unquote
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
 from .config import settings
@@ -15,8 +15,8 @@ def init_postgres_db():
         
     try:
         result = urlparse(settings.DATABASE_URL)
-        username = result.username
-        password = result.password
+        username = unquote(result.username) if result.username else None
+        password = unquote(result.password) if result.password else None
         database = result.path[1:]
         hostname = result.hostname
         port = result.port or 5432
