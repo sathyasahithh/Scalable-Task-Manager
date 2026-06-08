@@ -1,8 +1,8 @@
 {
 	"info": {
 		"_postman_id": "7a3b4e9f-8e2b-47e1-bc63-12e0329ac3ff",
-		"name": "Task Orchestrator API - Primetrade Intern Assignment",
-		"description": "Comprehensive REST API collection mapping all endpoints for registration, authentication, task CRUD, and role-based administration features. Pre-configured to support local runs at http://127.0.0.1:8000.",
+		"name": "Task Manager API",
+		"description": "Postman collection for testing task manager endpoints including registration, authentication, tasks CRUD, and admin controls.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
